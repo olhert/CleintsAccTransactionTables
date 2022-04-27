@@ -1,0 +1,40 @@
+@page
+@using ClientsUiApi
+@model System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<ClientsUiApi.Transaction>>
+
+@{
+    ViewBag.Title = "TransactionsTable";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Transactions</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th>Sender Id</th>
+            <th>Recipient Id</th>
+            <th>Sum of transaction</th>
+            <th>DateTime</th>
+        </tr>
+        
+        @foreach (Transaction item in ViewBag.Transaction)
+        {
+            <tr>
+                <td>@item.SenderId</td>
+                <td>@item.RecipientId</td>
+                <td>@item.SumOfTransaction</td>
+                <td>@item.DateTime</td>
+            </tr>
+        }
+        
+    </table>
+</div>
+</body>
+</html>
+

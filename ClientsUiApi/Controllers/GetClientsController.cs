@@ -17,7 +17,7 @@ namespace ClientsUiApi.Controllers
     [Route("[controller]")]
     public class GetClientsController : Controller
     {
-        [HttpGet]
+        [HttpGet("/clients")]
         public IActionResult ClientTable()
         {
             var data = new ClientsGetter().GetTableOfClients().Result;
