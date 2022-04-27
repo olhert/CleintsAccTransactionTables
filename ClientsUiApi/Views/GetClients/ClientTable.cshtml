@@ -1,0 +1,39 @@
+@page
+@using ClientsUiApi
+@model System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<ClientsUiApi.Client>>
+
+@{
+    ViewBag.Title = "ClientTable";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Clients</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <th>Client Id</th>
+            <th>Client Email</th>
+            <th>Client Name</th>
+            <th>Client Password</th>
+        </tr>
+        
+        @foreach (Client item in ViewBag.Clients)
+        {
+            <tr>
+                <td>@item.ClientId</td>
+                <td>@item.Email</td>
+                <td>@item.ClientName</td>
+                <td>@item.Password</td>
+            </tr>
+        }
+        
+    </table>
+</div>
+</body>
+</html>
